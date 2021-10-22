@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mosquitto-config
+  namespace: mosquitto
+  labels:
+    app: mosquitto
+data:
+  mosquitto.conf: |
+    listener 1883
+    allow_anonymous true
+    # persistence true
+    # persistence_location /mosquitto/data
+    # log_dest /mosquitto/log/mosquitto.log
+
+# https://mosquitto.org/man/mosquitto-conf-5.html
+# https://serverfault.com/questions/1045712/how-to-setup-mosquitto-mqtt-broker-in-kubernetes
