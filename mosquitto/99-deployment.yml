@@ -6,7 +6,7 @@ metadata:
   namespace: mosquitto
   labels:
     app: mosquitto
-spec:
+spec: #specs des Deployments
   replicas: 1
   selector:
     matchLabels:
@@ -15,16 +15,17 @@ spec:
     metadata:
       labels:
         app: mosquitto
-    spec:
+    spec: # specs/Blueprint für den Container
+      # siehe https://hub.docker.com/_/eclipse-mosquitto/
       containers:
         - name: mosquitto
           image: eclipse-mosquitto:2.0.12
           ports:
+            # wenn nicht anders angegeben ist containerPort==PodPort
             - containerPort: 1883
           volumeMounts:
-            # subPath fehlte...
-            - mountPath: /mosquitto/config/mosquitto.conf
-              subPath: mosquitto.conf
+            # Wie spielen mountPath und subPath zusammen?
+            - mountPath: /mosquitto/config
               name: mosquitto-config-volume
       volumes:
         - name: mosquitto-config-volume

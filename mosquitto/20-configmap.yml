@@ -6,6 +6,7 @@ metadata:
   labels:
     app: mosquitto
 data:
+  # Repräsentiert ein File namens 'mosquitto.conf' innerhalb des ConfigMap Pods
   mosquitto.conf: |
     listener 1883
     allow_anonymous true
