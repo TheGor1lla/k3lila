@@ -9,7 +9,8 @@ data:
   # Repräsentiert ein File namens 'mosquitto.conf' innerhalb des ConfigMap Pods
   mosquitto.conf: |
     listener 1883
-    allow_anonymous true
+    allow_anonymous false
+    password_file /mosquitto/data/passwd
     # persistence true
     # persistence_location /mosquitto/data
     # log_dest /mosquitto/log/mosquitto.log

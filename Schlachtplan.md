@@ -2,6 +2,10 @@
 IoT Sensoren (Temp,...)
 
 Mosquitto (persistiert config, logs)
+-logs wegpersistieren (daten eher nich)
+-mosquitto beibringen das zeug zu authentifizieren
+-secrets (username/passwort) irgendwo in mosquitto einstellen (-->Doku suchen)
+- docu zu mountPath und subpath angucken
 
 telegraf
 

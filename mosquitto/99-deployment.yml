@@ -27,7 +27,12 @@ spec: #specs des Deployments
             # Wie spielen mountPath und subPath zusammen?
             - mountPath: /mosquitto/config
               name: mosquitto-config-volume
+            - mountPath: /mosquitto/data
+              name: mosquitto-usersecret-volume
       volumes:
         - name: mosquitto-config-volume
           configMap:
             name: mosquitto-config
+        - name: mosquitto-usersecret-volume
+          secret:
+            secretName: mosquitto-usersecret
