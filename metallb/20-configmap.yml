@@ -1,0 +1,14 @@
+#https://metallb.universe.tf/configuration/
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: k3s
+      protocol: layer2
+      addresses:
+      - 192.168.0.201-192.168.0.250

@@ -1,0 +1,24 @@
+switch mal auf das lordCluster:
+    kubectx lordCluster (wahlweise auch kubectl config use-context lordCluster)
+
+erstmal brauchst du für alles noch das:
+     --insecure-skip-tls-verify --context=lordCluster
+am besten mit "alias k3s="kubectl --insecure-skip-tls-verify --context=lordCluster"
+
+
+
+namespaces wechseln
+kubectl config set-context --insecure-skip-tls-verify --context=lordCluster --current --namespace=XXX
+
+für XXX:
+metallb-system
+kube-system
+
+
+
+Mosquitto deployen
+einzeln
+
+oder ganzer Ordner
+
+
